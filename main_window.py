@@ -46,7 +46,6 @@ class Example(QWidget):
         self.btn_6.move(200, 550)
         self.btn_6.clicked.connect(self.showDialog_6)
         self.label.move(50, 220)
-
         self.resize(800, 600)
         self.center()
         self.setWindowTitle("lab3")
@@ -61,43 +60,10 @@ class Example(QWidget):
 
     
     def showDialog_1(self):
-
-        
         text_2, _ =(QFileDialog.getSaveFileName(self, "Напишите название файла", filter=".csv"))
-
         self.create_file = create_csv(str(self.folderpath),str(text_2))
 
-    def showDialog_2(self):
-
-        
-        text_2, _ =(QFileDialog.getSaveFileName(self, "Напишите название файла", filter=".csv"))
-        self.create_file = copy_random(str(self.folderpath),str(text_2))
-
-    def showDialog_3(self):
-
-        
-        text_2, ok = QInputDialog.getText(self, "Input Dialog", "Введите новое название папки:")
-
-        if ok:
-
-            self.create_file = copy_dataset(str(self.folderpath),str(text_2))
-
-    def showDialog_4(self):
-
-        text_1, _ =(QFileDialog.getOpenFileName(self, "выберите файл?"))
-        text_2, ok = QInputDialog.getText(self, "Input Dialog", "Введите метку:")
-        
-        if ok and _:
-
-            self.create_iterator = SimpleIterator(str(text_2), str(text_1))
-            self.pixmap = QPixmap(next(self.create_iterator))
-            self.label.setPixmap(self.pixmap)
-            self.label.resize(self.pixmap.width(), self.pixmap.height())
-
-    def showDialog_6(self):
-        self.pixmap = QPixmap(next(self.create_iterator))
-        self.label.setPixmap(self.pixmap)
-        self.label.resize(self.pixmap.width(), self.pixmap.height())
+    
 
 
 if __name__ == "__main__":
