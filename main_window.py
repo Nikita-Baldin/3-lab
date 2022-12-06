@@ -63,6 +63,15 @@ class Example(QWidget):
         text_2, _ =(QFileDialog.getSaveFileName(self, "Напишите название файла", filter=".csv"))
         self.create_file = create_csv(str(self.folderpath),str(text_2))
 
+    def showDialog_2(self):
+        text_2, _ =(QFileDialog.getSaveFileName(self, "Напишите название файла", filter=".csv"))
+        self.create_file = copy_random(str(self.folderpath),str(text_2))
+
+    def showDialog_3(self):
+        text_2, ok = QInputDialog.getText(self, "Input Dialog", "Введите новое название папки:")
+        if ok:
+            self.create_file = copy_dataset(str(self.folderpath),str(text_2))
+
     
 
 
