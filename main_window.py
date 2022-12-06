@@ -42,9 +42,9 @@ class Example(QWidget):
         self.btn_4.move(50, 180)
         self.btn_4.clicked.connect(self.showDialog_4)
         self.label = QLabel(self)
-        self.btn_6 = QPushButton("Далее", self)
-        self.btn_6.move(200, 550)
-        self.btn_6.clicked.connect(self.showDialog_6)
+        self.btn_5 = QPushButton("Далее", self)
+        self.btn_5.move(200, 550)
+        self.btn_5.clicked.connect(self.showDialog_5)
         self.label.move(50, 220)
         self.resize(800, 600)
         self.center()
@@ -81,7 +81,10 @@ class Example(QWidget):
             self.label.setPixmap(self.pixmap)
             self.label.resize(self.pixmap.width(), self.pixmap.height())
 
-    
+    def showDialog_5(self):
+        self.pixmap = QPixmap(next(self.create_iterator))
+        self.label.setPixmap(self.pixmap)
+        self.label.resize(self.pixmap.width(), self.pixmap.height())
 
 
 if __name__ == "__main__":
