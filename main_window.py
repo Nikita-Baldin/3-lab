@@ -72,6 +72,15 @@ class Example(QWidget):
         if ok:
             self.create_file = copy_dataset(str(self.folderpath),str(text_2))
 
+    def showDialog_4(self):
+        text_1, _ =(QFileDialog.getOpenFileName(self, "выберите файл?"))
+        text_2, ok = QInputDialog.getText(self, "Input Dialog", "Введите метку:")
+        if ok and _:
+            self.create_iterator = SimpleIterator(str(text_2), str(text_1))
+            self.pixmap = QPixmap(next(self.create_iterator))
+            self.label.setPixmap(self.pixmap)
+            self.label.resize(self.pixmap.width(), self.pixmap.height())
+
     
 
 
